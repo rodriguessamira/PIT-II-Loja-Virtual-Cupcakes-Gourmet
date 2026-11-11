@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Criar Conta | Cupcake Gourmet</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "#f4f0ea",
+            "primary-container": "#a95f6a",
+            "tertiary-fixed-dim": "#e8bf95",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#f8d9cf",
+            "inverse-primary": "#ffb2bc",
+            "secondary": "#705a51",
+            "on-tertiary-container": "#fffbff",
+            "inverse-surface": "#31302d",
+            "surface-bright": "#fdf9f3",
+            "on-secondary-fixed": "#271811",
+            "on-secondary": "#ffffff",
+            "background": "#fdf9f3",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#ddc0b6",
+            "surface-container-high": "#ebe8e2",
+            "on-tertiary-fixed": "#2b1700",
+            "primary": "#8c4753",
+            "tertiary-container": "#8f6e4a",
+            "surface-container-low": "#f7f3ed",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "secondary-fixed": "#fadcd1",
+            "on-tertiary-fixed-variant": "#5d4121",
+            "outline-variant": "#d8c1c3",
+            "surface-dim": "#dddad4",
+            "surface-container-highest": "#e6e2dc",
+            "on-background": "#1c1c18",
+            "tertiary": "#745634",
+            "primary-fixed": "#ffd9dd",
+            "primary-fixed-dim": "#ffb2bc",
+            "on-secondary-fixed-variant": "#56423b",
+            "surface": "#fdf9f3",
+            "on-secondary-container": "#745e55",
+            "on-primary-container": "#fffbff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#1c1c18",
+            "outline": "#857374",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#72323e",
+            "on-surface-variant": "#534344",
+            "surface-variant": "#e6e2dc",
+            "on-primary-fixed": "#3b0714",
+            "surface-container": "#f1ede7",
+            "surface-tint": "#8f4955",
+            "tertiary-fixed": "#ffddba"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin-md": "2rem",
+            "margin-lg": "3rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter-md": "1.5rem",
+            "gutter-lg": "2rem"
+          },
+          "fontFamily": {
+            "title-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ],
+            "title-md": [
+              "Plus Jakarta Sans"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Playfair Display"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "display-lg": [
+              "Playfair Display"
+            ],
+            "display-lg-mobile": [
+              "Playfair Display"
+            ],
+            "body-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "title-lg": [
+              "20px",
+              {
+                "lineHeight": "28px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "24px",
+              {
+                "lineHeight": "32px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ],
+            "title-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.06em",
+                "fontWeight": "700"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "400"
+              }
+            ],
+            "display-lg": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "display-lg-mobile": [
+              "38px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "body-sm": [
+              "12px",
+              {
+                "lineHeight": "18px",
+                "fontWeight": "400"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    /* Warm artisanal soft ambient shadow */
+    .shadow-warm-card {
+      box-shadow: 0 10px 30px -4px rgba(61, 43, 36, 0.07), 0 4px 12px -2px rgba(61, 43, 36, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-container selection:text-on-secondary-container relative overflow-x-hidden">
+<!-- Subtle Ambient Background Accents -->
+<div class="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-40">
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary-container/40 blur-3xl"></div>
+<div class="absolute top-1/2 -right-32 w-80 h-80 rounded-full bg-tertiary-fixed-dim/30 blur-3xl"></div>
+</div>
+<!-- Header Navigation Strip (Linear Auth Journey: Shell automatically suppressed) -->
+<header class="relative z-10 w-full px-4 sm:px-8 py-5 max-w-7xl mx-auto flex items-center justify-between">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-150 group py-1.5 px-2 rounded-lg" data-fallback="login.html" href="{{ url_for('login') }}">
+<span class="material-symbols-outlined text-lg transition-transform duration-150 group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-lg text-label-lg font-semibold">Voltar para o login</span>
+</a>
+</header>
+<!-- Main Canvas Content -->
+<main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-6 py-6 md:py-10">
+<!-- Brand Identity Anchor (Centered above the Card) -->
+<div class="text-center mb-6 flex flex-col items-center">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center mb-3 shadow-sm border border-outline-variant/30 text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="cake">cake</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-semibold text-primary tracking-tight">Cupcake Gourmet</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Crie sua conta para continuar</p>
+</div>
+<!-- Registration Card -->
+<div class="w-full max-w-[460px] bg-surface-container-lowest border border-outline-variant/40 rounded-3xl p-6 sm:p-8 shadow-warm-card">
+<!-- Card Header -->
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Criar uma conta</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Preencha seus dados para criar sua conta.</p>
+</div>
+<!-- Registration Form -->
+<form action="{{ url_for('cadastro') }}" class="space-y-4" id="form-cadastro" method="POST" novalidate="">
+<!-- Field 1: Nome Completo -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="nome">
+            Nome completo <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-surface-variant/70">
+<span class="material-symbols-outlined text-xl" data-icon="person">person</span>
+</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150" id="nome" name="nome" placeholder="Digite seu nome completo" required="" type="text"/>
+</div>
+</div>
+<!-- Field 2: E-mail -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="email">
+            E-mail <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-surface-variant/70">
+<span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150" id="email" name="email" placeholder="Digite seu e-mail" required="" type="email"/>
+</div>
+</div>
+<!-- Field 3: Telefone -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="telefone">
+            Telefone <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-surface-variant/70">
+<span class="material-symbols-outlined text-xl" data-icon="phone">phone</span>
+</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150" id="telefone" name="telefone" placeholder="(00) 00000-0000" required="" type="tel"/>
+</div>
+</div>
+<!-- Field 4: Senha -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="senha">
+            Senha <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-surface-variant/70">
+<span class="material-symbols-outlined text-xl" data-icon="lock">lock</span>
+</span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150" id="senha" name="senha" placeholder="Digite sua senha" required="" type="password"/>
+<button aria-label="Alternar visualização da senha" class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-on-surface-variant/70 hover:text-primary transition-colors focus:outline-none" id="toggle-senha" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility" id="icon-senha">visibility</span>
+</button>
+</div>
+</div>
+<!-- Field 5: Confirmar Senha -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="confirmar_senha">
+            Confirmar senha <span class="text-primary">*</span>
+</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-surface-variant/70">
+<span class="material-symbols-outlined text-xl" data-icon="lock">lock</span>
+</span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-150" id="confirmar_senha" name="confirmar_senha" placeholder="Digite novamente sua senha" required="" type="password"/>
+<button aria-label="Alternar visualização da confirmação de senha" class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-on-surface-variant/70 hover:text-primary transition-colors focus:outline-none" id="toggle-confirmar-senha" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility" id="icon-confirmar-senha">visibility</span>
+</button>
+</div>
+<!-- Password Helper Hint -->
+<div class="flex items-center gap-1.5 mt-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="info">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/80">A senha deve possuir pelo menos 8 caracteres.</span>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full h-[52px] bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all duration-200 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="submit">
+<span>Criar minha conta</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Return to Login Footer Link -->
+<div class="mt-6 pt-5 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Já possui uma conta? 
+          <a class="font-semibold text-primary hover:text-primary-container transition-colors underline-offset-4 hover:underline ml-1" href="{{ url_for('login') }}">
+            Entrar
+          </a>
+</p>
+</div>
+</div>
+</main>
+<!-- Footprint / Copyright Anchor -->
+<footer class="relative z-10 w-full py-6 text-center border-t border-outline-variant/30 mt-6 bg-surface-container/50">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+      © 2026 Cupcake Gourmet. Todos os direitos reservados.
+    </p>
+</footer>
+<!-- Micro-interactions: Password Visibility Toggles & Telefone Mask -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Toggle Senha Principal
+      const toggleSenhaBtn = document.getElementById('toggle-senha');
+      const senhaInput = document.getElementById('senha');
+      const iconSenha = document.getElementById('icon-senha');
+
+      if (toggleSenhaBtn && senhaInput && iconSenha) {
+        toggleSenhaBtn.addEventListener('click', () => {
+          const isPassword = senhaInput.getAttribute('type') === 'password';
+          senhaInput.setAttribute('type', isPassword ? 'text' : 'password');
+          iconSenha.textContent = isPassword ? 'visibility_off' : 'visibility';
+          iconSenha.setAttribute('data-icon', isPassword ? 'visibility_off' : 'visibility');
+        });
+      }
+
+      // Toggle Confirmar Senha
+      const toggleConfirmarSenhaBtn = document.getElementById('toggle-confirmar-senha');
+      const confirmarSenhaInput = document.getElementById('confirmar_senha');
+      const iconConfirmarSenha = document.getElementById('icon-confirmar-senha');
+
+      if (toggleConfirmarSenhaBtn && confirmarSenhaInput && iconConfirmarSenha) {
+        toggleConfirmarSenhaBtn.addEventListener('click', () => {
+          const isPassword = confirmarSenhaInput.getAttribute('type') === 'password';
+          confirmarSenhaInput.setAttribute('type', isPassword ? 'text' : 'password');
+          iconConfirmarSenha.textContent = isPassword ? 'visibility_off' : 'visibility';
+          iconConfirmarSenha.setAttribute('data-icon', isPassword ? 'visibility_off' : 'visibility');
+        });
+      }
+
+      // Mask format for Telefone: (00) 00000-0000
+      const telInput = document.getElementById('telefone');
+      if (telInput) {
+        telInput.addEventListener('input', (e) => {
+          let value = e.target.value.replace(/\D/g, '');
+          if (value.length > 11) value = value.slice(0, 11);
+          
+          if (value.length > 6) {
+            value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+          } else if (value.length > 2) {
+            value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+          } else if (value.length > 0) {
+            value = `(${value}`;
+          }
+          e.target.value = value;
+        });
+      }
+    });
+ 
+const formularioCadastro =
+    document.getElementById("form-cadastro");
+
+if (formularioCadastro) {
+
+    formularioCadastro.addEventListener("submit", function (evento) {
+
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telefone = document.getElementById("telefone").value.trim();
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmar_senha").value;
+
+        if (nome === "") {
+            evento.preventDefault();
+            alert("Por favor, informe seu nome completo.");
+            document.getElementById("nome").focus();
+            return;
+        }
+
+        if (email === "") {
+            evento.preventDefault();
+            alert("Por favor, informe seu e-mail.");
+            document.getElementById("email").focus();
+            return;
+        }
+
+        const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!formatoEmail.test(email)) {
+            evento.preventDefault();
+            alert("Informe um e-mail válido.");
+            document.getElementById("email").focus();
+            return;
+        }
+
+        const telefoneNumeros = telefone.replace(/\D/g, "");
+
+        if (telefoneNumeros.length < 10) {
+            evento.preventDefault();
+            alert("Informe um telefone válido.");
+            document.getElementById("telefone").focus();
+            return;
+        }
+
+        if (senha.length < 8) {
+            evento.preventDefault();
+            alert("A senha deve possuir pelo menos 8 caracteres.");
+            document.getElementById("senha").focus();
+            return;
+        }
+
+        if (confirmarSenha === "") {
+            evento.preventDefault();
+            alert("Por favor, confirme sua senha.");
+            document.getElementById("confirmar_senha").focus();
+            return;
+        }
+
+        if (senha !== confirmarSenha) {
+            evento.preventDefault();
+            alert("As senhas não coincidem.");
+            document.getElementById("confirmar_senha").focus();
+            return;
+        }
+
+        // Dados válidos: o formulário será enviado ao Flask.
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cupcake Gourmet - Minha Sacola</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-dim": "#dddad4",
+            "inverse-primary": "#ffb2bc",
+            "secondary-fixed-dim": "#ddc0b6",
+            "on-surface-variant": "#534344",
+            "on-primary-fixed": "#3b0714",
+            "on-tertiary-container": "#fffbff",
+            "surface-variant": "#e6e2dc",
+            "outline": "#857374",
+            "on-background": "#1c1c18",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#e6e2dc",
+            "surface-container-high": "#ebe8e2",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "surface-bright": "#fdf9f3",
+            "tertiary-fixed-dim": "#e8bf95",
+            "tertiary-container": "#8f6e4a",
+            "on-primary-fixed-variant": "#72323e",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#fffbff",
+            "on-primary": "#ffffff",
+            "outline-variant": "#d8c1c3",
+            "surface": "#fdf9f3",
+            "on-secondary-fixed-variant": "#56423b",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#31302d",
+            "on-secondary-fixed": "#271811",
+            "surface-container": "#f1ede7",
+            "inverse-on-surface": "#f4f0ea",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#ffddba",
+            "primary-container": "#a95f6a",
+            "on-tertiary-fixed": "#2b1700",
+            "surface-container-low": "#f7f3ed",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#745e55",
+            "primary": "#8c4753",
+            "surface-tint": "#8f4955",
+            "secondary": "#705a51",
+            "on-tertiary-fixed-variant": "#5d4121",
+            "primary-fixed-dim": "#ffb2bc",
+            "tertiary": "#745634",
+            "on-surface": "#1c1c18",
+            "background": "#fdf9f3",
+            "secondary-container": "#f8d9cf",
+            "secondary-fixed": "#fadcd1",
+            "primary-fixed": "#ffd9dd"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "gutter": "1rem",
+            "margin-md": "2rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter-lg": "2rem",
+            "margin": "1rem",
+            "space-md": "1rem",
+            "gutter-md": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "3rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "display-lg": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-lg-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(61, 43, 36, 0.05);
+    }
+    .custom-shadow-card {
+      box-shadow: 0 12px 32px -4px rgba(61, 43, 36, 0.07);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- MENU LATERAL MOBILE -->
+
+<div
+    id="mobile-menu-backdrop"
+    class="fixed inset-0 bg-black/50 backdrop-blur-[2px] z-50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    aria-hidden="true"
+></div>
+
+<aside
+    id="mobile-menu-drawer"
+    class="fixed top-0 left-0 bottom-0 w-[82%] max-w-[320px] bg-background text-on-surface z-50 shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden border-r border-outline-variant/30"
+    aria-label="Menu de navegação"
+>
+
+    <!-- Cabeçalho do menu -->
+    <div class="px-5 pt-6 pb-4 flex items-center justify-between border-b border-outline-variant/30">
+
+        <div class="flex items-center gap-2.5">
+
+            <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+                <span
+                    class="material-symbols-outlined text-primary text-xl"
+                    style="font-variation-settings: 'FILL' 1;"
+                >
+                    cake
+                </span>
+            </div>
+
+            <div>
+                <span class="font-headline-md text-headline-md font-semibold text-primary tracking-tight block leading-tight">
+                    Cupcake Gourmet
+                </span>
+
+                <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest text-[9px]">
+                    Ateliê Confeitaria
+                </span>
+            </div>
+
+        </div>
+
+        <button
+            id="btn-close-menu"
+            aria-label="Fechar menu"
+            class="w-11 h-11 flex items-center justify-center rounded-full text-secondary hover:text-primary hover:bg-secondary-container/40 active:scale-95 transition-all duration-150"
+            type="button"
+        >
+            <span class="material-symbols-outlined text-xl">
+                close
+            </span>
+        </button>
+
+    </div>
+
+
+    <!-- Navegação -->
+    <nav class="px-3 py-5 space-y-1.5 flex-1 overflow-y-auto">
+
+        <a
+            href="/"
+            class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-on-surface-variant hover:text-primary hover:bg-surface-container active:scale-95 transition-all duration-150 font-label-lg text-label-lg menu-link"
+        >
+            <span class="material-symbols-outlined text-secondary">
+                home
+            </span>
+
+            <span class="flex-1">
+                Início
+            </span>
+        </a>
+
+
+        <a
+            href="/#destaques"
+            class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-on-surface-variant hover:text-primary hover:bg-surface-container active:scale-95 transition-all duration-150 font-label-lg text-label-lg menu-link"
+        >
+            <span class="material-symbols-outlined text-secondary">
+                cake
+            </span>
+
+            <span class="flex-1">
+                Nossos Cupcakes
+            </span>
+
+            <span class="material-symbols-outlined text-sm text-outline-variant">
+                chevron_right
+            </span>
+        </a>
+
+
+        <a
+            href="/#sobre"
+            class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-on-surface-variant hover:text-primary hover:bg-surface-container active:scale-95 transition-all duration-150 font-label-lg text-label-lg menu-link"
+        >
+            <span class="material-symbols-outlined text-secondary">
+                info
+            </span>
+
+            <span class="flex-1">
+                Sobre Nós
+            </span>
+        </a>
+
+
+        <a
+            href="/#contato"
+            class="flex items-center gap-3.5 px-4 py-3 rounded-2xl text-on-surface-variant hover:text-primary hover:bg-surface-container active:scale-95 transition-all duration-150 font-label-lg text-label-lg menu-link"
+        >
+            <span class="material-symbols-outlined text-secondary">
+                phone
+            </span>
+
+            <span class="flex-1">
+                Contato
+            </span>
+        </a>
+
+
+        <!-- Separador -->
+        <div class="pt-3 pb-2 px-1">
+            <div class="h-px bg-outline-variant/30 w-full"></div>
+        </div>
+
+
+        <!-- Minha Sacola -->
+        <div class="pt-1">
+
+            <div class="bg-surface-container-low rounded-2xl p-3.5 border border-outline-variant/40 shadow-sm">
+
+                <div class="flex items-center justify-between mb-2.5">
+
+                    <div class="flex items-center gap-2.5">
+
+                        <div class="w-8 h-8 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary">
+                            <span
+                                class="material-symbols-outlined text-lg"
+                                style="font-variation-settings: 'FILL' 1;"
+                            >
+                                shopping_bag
+                            </span>
+                        </div>
+
+                        <div>
+
+                            <p class="font-title-md text-title-md text-secondary text-sm font-semibold">
+                                Minha Sacola
+                            </p>
+
+                            <p class="font-body-sm text-body-sm text-on-surface-variant">
+                                Pronta para finalizar
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <span
+                        id="drawer-cart-count"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full"
+                    >
+                        0 itens
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="{{ url_for('sacola') }}"
+                    class="w-full inline-flex items-center justify-between px-3 py-2 rounded-xl bg-surface-container-lowest text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary border border-outline-variant/30 transition-all duration-150 menu-link"
+                >
+
+                    <span>
+                        Ver Sacola
+                    </span>
+
+                    <span class="material-symbols-outlined text-sm">
+                        arrow_forward
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Rodapé -->
+    <div class="px-5 py-4 bg-surface-container-low border-t border-outline-variant/30">
+
+        <div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+
+            <span class="material-symbols-outlined text-base text-secondary">
+                schedule
+            </span>
+
+            <span class="text-xs">
+                Ter a Dom: 10h às 19h
+            </span>
+
+        </div>
+
+    </div>
+
+</aside>
+  <!-- TopAppBar Component -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none border-b border-outline-variant/30 dark:border-outline-variant/10 sticky top-0 z-40">
+<div class="flex justify-between items-center w-full px-4 py-3 max-w-7xl mx-auto">
+<!-- Leading Menu Icon -->
+<div class="flex items-center gap-2">
+<button id="btn-menu-mobile" aria-label="Menu" class="p-2 text-primary dark:text-inverse-primary hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex items-center gap-6 ml-4">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="{{ url_for('inicio') }}#inicio">Início</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="{{ url_for('inicio') }}#cardapio">Cardápio</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="{{ url_for('inicio') }}#favorito">Favoritos</a>
+</nav>
+</div>
+<!-- Brand Logo / Headline -->
+<a class="font-headline-md text-headline-md font-semibold text-primary dark:text-inverse-primary tracking-tight" href="#">
+        Cupcake Gourmet
+      </a>
+<!-- Trailing Action Icons -->
+<div class="flex items-center gap-1 sm:gap-2">
+<button aria-label="Pesquisar" class="p-2 text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<button id="btn-minha-conta" aria-label="Perfil" class="p-2 text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">person</span>
+</button>
+<a aria-label="Sacola" class="relative p-2 text-primary dark:text-inverse-primary hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="absolute top-1 right-1 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transition-opacity" id="badge-count">0</span>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Content Container -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 md:py-10">
+<!-- Breadcrumb & Header Flow -->
+<div class="mb-6 md:mb-8">
+<a class="inline-flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md mb-3 group" href="{{ url_for('inicio') }}#destaques">
+<span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform" >arrow_back</span>
+        Voltar ao cardápio
+      </a>
+<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-outline-variant/30 pb-4">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface font-semibold tracking-tight">
+            Minha Sacola
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Confira seus produtos antes de finalizar o pedido.
+          </p>
+</div>
+<div class="flex items-center gap-2 self-start sm:self-auto">
+
+</div>
+</div>
+</div>
+<!-- Dynamic Cart Content Layout (List + Order Summary) -->
+<div class="lg:grid lg:grid-cols-12 lg:gap-8 items-start space-y-8 lg:space-y-0" id="cart-content">
+<!-- Dynamic Items Section (lg:col-span-7 or 8) -->
+<section aria-label="Lista de produtos na sacola" class="lg:col-span-7 xl:col-span-8 space-y-4">
+<!-- Dynamic List Header -->
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant px-1">
+<div class="flex items-center gap-2">
+<span>Itens na Sacola</span>
+<span class="bg-secondary-container text-on-secondary-container font-semibold px-2 py-0.5 rounded-full text-xs" id="cart-items-counter">2 itens</span>
+</div>
+<span class="text-xs text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span> Preparo artesanal fresco
+        </span>
+</div>
+<!-- Repeatable Dynamic Cart Items Container (#cart-items-container) -->
+<div class="space-y-4" id="cart-items-container">
+
+</div>
+<!-- Nota artesanal informativa -->
+<div class="rounded-xl p-4 bg-surface-container-low border border-outline-variant/30 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Nossos cupcakes são produzidos artesanalmente no próprio dia com manteiga pura e ovos frescos da serra.
+          </p>
+</div>
+</section>
+<!-- Resumo do Pedido (Coluna lateral no desktop com lg:sticky lg:top-8, largura total no celular) -->
+<aside aria-label="Resumo do pedido" class="lg:col-span-5 xl:col-span-4 lg:sticky lg:top-8">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-6 custom-shadow-card flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface pb-4 border-b border-outline-variant/20 font-semibold">
+            Resumo do pedido
+          </h2>
+<div class="py-4 space-y-3">
+<!-- Subtotal -->
+<div class="flex justify-between items-center text-body-md font-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-medium text-on-surface" id="summary-subtotal">R$ 52,30</span>
+</div>
+<!-- Total -->
+<div class="pt-3 border-t border-outline-variant/20 flex justify-between items-baseline">
+<span class="font-title-md text-title-md font-bold text-on-surface">Total:</span>
+<span class="font-headline-md text-headline-md font-bold text-primary" id="summary-total">R$ 52,30</span>
+</div>
+</div>
+<!-- Ações -->
+<div class="pt-2 space-y-3">
+<!-- Botão Primário Finalizar Pedido -->
+<a
+    href="{{ url_for('checkout') }}"
+    class="w-full min-h-[48px] bg-primary hover:bg-primary-container text-on-primary rounded-xl py-4 px-6 font-label-lg text-label-lg font-semibold shadow-sm hover:opacity-95 transition-all duration-150 flex items-center justify-center gap-2 active:scale-98"
+>
+    <span>Finalizar Pedido</span>
+    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<!-- Botão Secundário Continuar Comprando -->
+<a class="w-full min-h-[44px] inline-flex items-center justify-center py-3 px-4 rounded-xl border border-secondary text-secondary hover:bg-surface-container-low transition-colors text-label-md font-label-md font-semibold text-center" href="/#cardapio">
+              Continuar Comprando
+            </a>
+</div>
+<!-- Selos de Confiança -->
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-around text-on-surface-variant text-center">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-tertiary">lock</span>
+<span class="text-[11px] font-medium">Pagamento Seguro</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-tertiary">bakery_dining</span>
+<span class="text-[11px] font-medium">Fresco Hoje</span>
+</div>
+<div class="h-6 w-px bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-[20px] text-tertiary">redeem</span>
+<span class="text-[11px] font-medium">Embalagem Presente</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Estado da Sacola Vazia (#empty-cart-state) -->
+<div class="hidden py-12 px-4 max-w-lg mx-auto text-center" id="empty-cart-state">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-8 sm:p-12 custom-shadow flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-[44px]">shopping_bag</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-semibold text-on-surface mb-2">
+          Sua sacola está vazia
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xs">
+          Adicione seus cupcakes favoritos para continuar.
+        </p>
+<a class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-container text-on-primary rounded-xl py-3.5 px-8 font-label-lg text-label-lg font-semibold transition-all duration-150 active:scale-95 shadow-sm min-h-[48px]" href="#">
+<span>Ver Produtos</span>
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container dark:bg-surface-dim border-t border-outline-variant/40 dark:border-outline-variant/20 mt-16">
+<div class="w-full px-6 py-12 md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<!-- Brand & Copy -->
+<div class="space-y-2">
+<a class="font-headline-md text-headline-md font-semibold text-primary dark:text-inverse-primary tracking-tight" href="#">
+          Cupcake Gourmet
+        </a>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+          © 2026 Cupcake Gourmet. Todos os direitos reservados.
+        </p>
+</div>
+<!-- Footer Links -->
+<ul class="flex flex-wrap gap-x-6 gap-y-3 text-label-md font-label-md">
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 hover:underline" href="#">Cardápio Completo</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 hover:underline" href="#">Nossa História</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 hover:underline" href="#">Ingredientes &amp; Alergênicos</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 hover:underline" href="#">Política de Privacidade</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 hover:underline" href="#">Termos de Uso</a>
+</li>
+<li>
+<a class="text-primary dark:text-inverse-primary font-semibold hover:underline flex items-center gap-1" href="#">
+<span>Fale pelo WhatsApp</span>
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</a>
+</li>
+</ul>
+</div>
+</footer>
+<!-- BottomNavBar Component (Mobile docked) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface/95 dark:bg-inverse-surface/95 backdrop-blur-md shadow-lg dark:shadow-none border-t border-outline-variant/30 dark:border-outline-variant/10">
+<!-- Item 0: Início -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1.5 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-label-sm font-label-sm mt-0.5">Início</span>
+</a>
+<!-- Item 1: Cardápio -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1.5 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">cake</span>
+<span class="text-label-sm font-label-sm mt-0.5">Cardápio</span>
+</a>
+<!-- Item 2: Favoritos -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1.5 hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[22px]">favorite</span>
+<span class="text-label-sm font-label-sm mt-0.5">Favoritos</span>
+</a>
+<!-- Item 3: Sacola -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1.5 active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Sacola</span>
+</a>
+</nav>
+<!-- JavaScript Vanilla para alternar visualização e suporte à dinamização via backend -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </script>
+</body>
+</html>
